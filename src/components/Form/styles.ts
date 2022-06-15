@@ -2,7 +2,7 @@ import { styled } from "../../styles/stitches.config";
 
 export const Article = styled('section', {
   width: 'clamp(420px, 50%, 720px)',
-  padding: '32px',
+  padding: '40px',
   textAlign: 'center',
   background: 'rgba(29, 29, 29, 0.5)',
   'mix-blend-mode': 'normal',
@@ -20,4 +20,11 @@ export const H3 = styled('h3', {
 export const P = styled('p', {
   fontSize: '$1',
   marginTop: 6
+})
+
+export const CustomForm = styled('form' , {
+  marginTop: 32,
+  width: '90%',
+  marginLeft: 'auto',
+  marginRight: 'auto',
 })

@@ -8,6 +8,8 @@ const Div = styled("div", {
   borderRadius: "8px",
   padding: "12px 8px",
   overflow: "auto",
+  margin: '16px 0',
+  backgroundColor: '#202020',
   
   '&:hover, &:focus-within': {
     border: '1.5px solid #E7E7E7'

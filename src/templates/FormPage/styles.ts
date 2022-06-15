@@ -5,7 +5,7 @@ export const Section = styled('section', {
   width: '100%',
   height: '100vh',
   display: 'flex',
-  padding: '100px',
+  padding: '80px',
   color: 'white',
   backgroundColor: '$bgBlack',
   backgroundImage: `url(${formGlobe.src})`,

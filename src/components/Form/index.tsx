@@ -1,12 +1,14 @@
+import Button from "../Button";
+import Checkbox from "../Checkbox";
 import Input from "../Input";
-import { Article, H3, P } from "./styles";
+import { Article, CustomForm, H3, P } from "./styles";
 
 function Form() {
   return (
     <Article>
       <H3>Cadastre-se</H3>
       <P>Para começar, insira os dados abaixo</P>
-      <form>
+      <CustomForm>
         <Input label="Nome" />
         <Input label="Sobrenome" />
         <Input label="E-mail" />
@@ -14,7 +16,9 @@ function Form() {
         <Input label="Senha" />
         <Input label="Selecione seu país" />
         <Input label="Bio" />
-      </form>
+        <Button />
+        <Checkbox />
+      </CustomForm>
     </Article>
   );
 }
