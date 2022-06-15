@@ -12,7 +12,7 @@ export const CustomButton = styled('button', {
 
 function Button(){
   return (
-    <CustomButton>Sim</CustomButton>
+    <CustomButton>Cadastrar</CustomButton>
   )
 }
 

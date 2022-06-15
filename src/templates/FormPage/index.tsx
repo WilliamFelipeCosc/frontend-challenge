@@ -1,19 +1,22 @@
-import Form from "../../components/Form"
-import SmallPolygon from "../../components/SmallPolygon"
-import { Section } from "./styles"
+import Form from "../../components/Form";
+import SmallPolygon from "../../components/SmallPolygon";
+import { Article, Div, H1, Section } from "./styles";
 
-function FormPage(){
-
+function FormPage() {
   return (
     <Section>
       <Form />
-      <article id="heading">
-        <h1>Teste técnico</h1>
-        <SmallPolygon />
-        <p>Controle suas contas nacionais e internacionais em um único lugar!</p>
-      </article>
+      <Article>
+        <Div>
+          <H1>Teste técnico</H1>
+          <SmallPolygon />
+          <p>
+            Controle suas contas nacionais e internacionais em um único lugar!
+          </p>
+        </Div>
+      </Article>
     </Section>
-  )
+  );
 }
 
-export default FormPage
+export default FormPage;

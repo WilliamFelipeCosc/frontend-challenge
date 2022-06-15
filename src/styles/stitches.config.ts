@@ -1,6 +1,6 @@
 import { createStitches } from '@stitches/react';
 
-export const { styled, getCssText, globalCss } = createStitches({
+export const { styled, getCssText } = createStitches({
   theme: {
     fonts: {
       system: 'poppins',
@@ -12,7 +12,7 @@ export const { styled, getCssText, globalCss } = createStitches({
       bgBlack: 'rgba(18, 18, 18, 1)',
       opacityBlack: 'rgba(29, 29, 29, 0.5',
       primaryGreen: 'rgba(0, 242, 177, 1)',
-      primaryBlue: 'rgba(71, 224, 255, 1)'
+      primaryBlue: 'rgba(71, 224, 255, 1)',
     },
     fontSizes: {
       1: '14px',
