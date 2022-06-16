@@ -1,7 +1,7 @@
 import { styled } from "../../styles/stitches.config";
 
 export const Article = styled('article', {
-  width: 'clamp(420px, 50%, 720px)',
+  width: 'clamp(320px, 50%, 720px)',
   padding: '40px',
   textAlign: 'center',
   background: 'rgba(29, 29, 29, 0.5)',

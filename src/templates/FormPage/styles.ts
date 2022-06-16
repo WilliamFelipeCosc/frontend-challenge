@@ -12,15 +12,24 @@ export const Section = styled('section', {
   backgroundImage: `url(${formGlobe.src})`,
   backgroundPosition: 'right',
   backgroundRepeat: 'no-repeat',
-  // backgroundSize: '60% 100%'
+  
+  '@bp1': {
+    alignItems:'center',
+    flexDirection: 'column-reverse',
+    padding:'80px 0'
+  },
+
 })
 
 export const Article = styled('article', {
-  width: 'clamp(420px, 50%, 900px)',
+  width: 'clamp(320px, 50%, 900px)',
   margin: '0 auto',
   display:'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  '@bp1': {
+    marginBottom:16
+  },
 })
 
 export const H1 = styled('h1', {
