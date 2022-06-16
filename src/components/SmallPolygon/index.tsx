@@ -6,12 +6,17 @@ const Div = styled('div', {
   width:43,
   height: 11,
   borderRadius: 20, 
-  margin: '12px 0'
+  margin: '12px 0',
+
 })
 
-function SmallPolygon() {
+interface Props {
+  centered?: boolean
+}
+
+function SmallPolygon({centered}:Props) {
   return (
-    <Div />
+    <Div css={centered ? {margin:'12px auto 16px'} : {}} />
   )
 }
 

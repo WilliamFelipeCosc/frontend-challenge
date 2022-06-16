@@ -9,7 +9,7 @@ export async function postUser(data:any){
   return reqJson
 }
 
-export async function getUser(id:any = ''){
+export async function getUser(id:string | string[] = ''){
   const req = await fetch(`https://629f52338b939d3dc29519e3.mockapi.io/api/challenge/user/${id}`);
 
   const reqJson = await req.json()

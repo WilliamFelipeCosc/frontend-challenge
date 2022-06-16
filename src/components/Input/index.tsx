@@ -1,12 +1,14 @@
 import { HTMLInputTypeAttribute, useState, forwardRef } from "react";
+import { FieldValues } from "react-hook-form";
 import { CustomInput, Div, Label } from "./styles";
 
 interface Props {
   label: string
   type?: HTMLInputTypeAttribute 
+  fieldProps: FieldValues
 }
 
-function Input({label, type= 'text', fieldProps}:any,ref:any) {
+function Input({label, type='text', fieldProps}:Props,ref:any) {
   
   return (
     <Div css={fieldProps?.value ? { paddingBottom: 2 } : {}}>

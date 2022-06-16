@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SmallPolygon from "../../components/SmallPolygon";
 import UserLogo from "../../components/UserLogo"
-import { getUser } from "../../utils/postUser";
+import { getUser } from "../../utils/apiUser";
 import { Article, H1, Section } from "./styles"
 
 function UserPage(props:any){
@@ -32,16 +32,16 @@ function UserPage(props:any){
   ]
   
   const {firstName , lastName, dateOfBirthday} = user;
-  const novaData = new Date(dateOfBirthday);
-  const datee = `${novaData.getDate()+1} de ${months[novaData.getMonth() ?? 0]} de ${novaData.getFullYear()}`
+  const newBirthday = new Date(dateOfBirthday);
+  const newDate = `${newBirthday.getDate()+1} de ${months[newBirthday.getMonth() ?? 0]} de ${newBirthday.getFullYear()}`
 
   return( 
     <Section>
       <Article>
         <UserLogo nome={firstName} sobrenome={lastName}/>
         <H1>Bem Vindo {firstName} {lastName}</H1>
-        <SmallPolygon />
-        <p>Você nasceu no dia {datee}. </p>
+        <SmallPolygon centered/>
+        <p>Você nasceu no dia {newDate}. </p>
       </Article>
     </Section>
   )

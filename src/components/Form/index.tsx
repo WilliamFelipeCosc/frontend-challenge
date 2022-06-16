@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { SubmitHandler, useForm, Controller } from "react-hook-form";
-import {postUser} from "../../utils/postUser";
+import { postUser } from "../../utils/apiUser";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
 import Input from "../Input";
@@ -11,9 +11,9 @@ function Form() {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<any> = async (data) => {
-    const date = data.dateOfBirthday.split('/').reverse().join('-');
-    const body = await postUser({...data, dateOfBirthday: new Date(date)});
-    router.push(`/user/${body.id}`)
+    const date = data.dateOfBirthday.split("/").reverse().join("-");
+    const body = await postUser({ ...data, dateOfBirthday: new Date(date) });
+    router.push(`/user/${body.id}`);
   };
 
   const arrT = watch();
