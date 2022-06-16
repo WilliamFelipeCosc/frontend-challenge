@@ -1,18 +1,45 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import SmallPolygon from "../../components/SmallPolygon";
 import UserLogo from "../../components/UserLogo"
+import { getUser } from "../../utils/postUser";
 import { Article, H1, Section } from "./styles"
 
-function UserPage(){
-  const nome = 'Jorge';
-  const sobrenome = 'Gastaldi';
-  const novaData = new Date();
-  const datee = `${novaData.getDay()} de ${novaData.getMonth() + 1} de ${novaData.getFullYear()}`
+function UserPage(props:any){
+  const router = useRouter();
+  const [user, setUser] = useState<any>({});
+ 
+  useEffect(() => {
+    const id  = router?.query?.id ?? ''
+    if(id){
+      getUser(id).then(resp => setUser(resp))
+    }
+  }, [router?.query?.id])
 
-  return(
+  const months = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ]
+  
+  const {firstName , lastName, dateOfBirthday} = user;
+  const novaData = new Date(dateOfBirthday);
+  const datee = `${novaData.getDate()+1} de ${months[novaData.getMonth() ?? 0]} de ${novaData.getFullYear()}`
+
+  return( 
     <Section>
       <Article>
-        <UserLogo nome={nome} sobrenome={sobrenome}/>
-        <H1>Bem Vindo {nome} {sobrenome}</H1>
+        <UserLogo nome={firstName} sobrenome={lastName}/>
+        <H1>Bem Vindo {firstName} {lastName}</H1>
         <SmallPolygon />
         <p>Você nasceu no dia {datee}. </p>
       </Article>

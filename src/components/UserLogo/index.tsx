@@ -6,10 +6,10 @@ interface Props {
 }
 
 function UserLogo({nome, sobrenome}:Props){
-  const nomeUpper = 'Jorge'?.[0]?.toLocaleUpperCase() ?? '';
-  const sobrenomeUpper = 'Gastaldi'?.[0]?.toLocaleUpperCase() ?? '';
+  const nomeUpper = nome?.[0]?.toLocaleUpperCase() ?? '';
+  const sobrenomeUpper = sobrenome?.[0]?.toLocaleUpperCase() ?? '';
   return(
-    <Div>{nomeUpper}{nomeUpper}</Div>
+    <Div>{nomeUpper}{sobrenomeUpper}</Div>
   )
 }
 

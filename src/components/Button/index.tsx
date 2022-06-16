@@ -1,18 +1,14 @@
-import { styled } from "../../styles/stitches.config"
+import { CustomButton } from "./styles"
 
-export const CustomButton = styled('button', {
-  backgroundColor: 'rgba(0, 242, 177, 1)',
-  padding: '16px 24px',
-  color: '#000',
-  width: '100%',
-  margin: '12px auto',
-  borderRadius: 8,
-  cursor: 'pointer'
-})
+interface Props {
+  text: string
+  onClick?: () => void
+  disabled: boolean
+}
 
-function Button(){
+function Button({text, onClick = () => {}, disabled}:Props){
   return (
-    <CustomButton>Cadastrar</CustomButton>
+    <CustomButton onClick={onClick} disabled={disabled}>{text}</CustomButton>
   )
 }
 

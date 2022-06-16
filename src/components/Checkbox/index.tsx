@@ -1,20 +1,16 @@
-import { styled } from "../../styles/stitches.config";
+import { forwardRef } from "react";
+import { CustomCheckbox, Div } from "./styles";
 
-export const Div = styled("div", {
-  marginTop: 8
-});
+interface Props {
+  text: string
+}
 
-export const CustomCheckbox = styled("input", {
-  'accent-color': 'rgba(0, 242, 177, 1)',
-  marginRight:8
-});
-
-function Checkbox() {
+function Checkbox({text, register, fieldProps}:any, ref:any) {
   return (
     <Div>
-      <CustomCheckbox id="checkbox" type="checkbox" />
-      <label htmlFor="checkbox">Desejo receber notificações</label>
+      <CustomCheckbox ref={ref} id="checkbox" type="checkbox" {...fieldProps} />
+      <label htmlFor="checkbox">{text}</label>
     </Div>
   );
 }
-export default Checkbox;
+export default forwardRef(Checkbox);

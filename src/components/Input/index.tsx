@@ -1,57 +1,27 @@
-import { useState } from "react";
-import { styled } from "../../styles/stitches.config";
-
-const Div = styled("div", {
-  fontSize: "$1",
-  border: "rgba(65, 65, 65, 1) 1px solid",
-  position: "relative",
-  borderRadius: "8px",
-  padding: "12px 8px",
-  overflow: "auto",
-  margin: '16px 0',
-  backgroundColor: '#202020',
-  
-  '&:hover, &:focus-within': {
-    border: '1.5px solid #E7E7E7'
-  }
-});
-
-const Label = styled("label", {
-  position: "absolute",
-  color: "#888888",
-  transform: "translateY(-50%)",
-  top: "50%",
-  left: "9px",
-});
-
-const CustomInput = styled("input", {
-  fontFamily: "$system",
-  fontSize: "$1",
-  border: 0,
-  outline: 0,
-  width: '100%',
-  backgroundColor: 'inherit',
-  color: 'white'
-});
+import { HTMLInputTypeAttribute, useState, forwardRef } from "react";
+import { CustomInput, Div, Label } from "./styles";
 
 interface Props {
   label: string
+  type?: HTMLInputTypeAttribute 
 }
 
-function Input({label}:Props) {
-  const [state, setState] = useState("");
+function Input({label, type= 'text', fieldProps}:any,ref:any) {
+  
   return (
-    <Div css={state ? { paddingBottom: 2 } : {}}>
-      <Label css={state ? { top: 12, fontSize: 12 } : {}}>
+    <Div css={fieldProps?.value ? { paddingBottom: 2 } : {}}>
+      <Label css={fieldProps?.value ? { top: 12, fontSize: 12 } : {}} htmlFor={label}>
         {label}
       </Label>
       <CustomInput
-        css={state ? { marginTop: 8 } : {}}
-        value={state}
-        onChange={(e) => setState(e.target.value)}
+        {...fieldProps}
+        ref={ref}
+        id={label}
+        css={fieldProps?.value ? { marginTop: 8 } : {}}
+        type={type}
       />
     </Div>
   );
 }
 
-export default Input;
+export default forwardRef(Input);
